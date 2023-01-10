@@ -15,12 +15,21 @@ from sample import Sample
 from utils import generate_weights_batch_dfs
 from scalarization_methods import WeightedSumScalarization
 from mopg import evaluation
+import pickle
 
 '''
 initialize_warm_up_batch: method to generate tasks in the warm-up stage.
 Each task is a pair of an initial random policy and an evenly distributed optimization weight.
 The optimization weight is represented by a weighted-sum scalarization function.
 '''
+
+def inherit_warm_up_batch(path_el, path_sc):
+    with open(path_el, 'rb') as f:
+        sample_batch = pickle.load(f)
+    with open(path_sc, 'rb') as f:
+        scalarization_batch = pickle.load(f)
+    return sample_batch, scalarization_batch
+
 
 
 def initialize_warm_up_batch(args, device):

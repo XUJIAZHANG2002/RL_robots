@@ -22,7 +22,7 @@ from population_2d import Population as Population2d
 from population_3d import Population as Population3d
 from opt_graph import OptGraph
 from utils import generate_weights_batch_dfs, print_info
-from warm_up import initialize_warm_up_batch
+from warm_up import initialize_warm_up_batch, inherit_warm_up_batch
 from mopg import MOPG_worker
 
 def run(args):
@@ -38,7 +38,7 @@ def run(args):
     scalarization_template = WeightedSumScalarization(num_objs = args.obj_num, weights = np.ones(args.obj_num) / args.obj_num)
 
     total_num_updates = int(args.num_env_steps) // args.num_steps // args.num_processes
-    
+
     start_time = time.time()
 
     # initialize ep and population and opt_graph
@@ -53,8 +53,17 @@ def run(args):
 
 
     # Construct tasks for warm up
-    elite_batch, scalarization_batch = initialize_warm_up_batch(args, device)
-    
+
+    if args.inherit == 'F':
+        elite_batch, scalarization_batch = initialize_warm_up_batch(args, device)
+    else:
+        print('inh! ')
+        elite_batch, scalarization_batch = inherit_warm_up_batch(
+            os.path.join(args.save_dir, args.inherit, 'popu' + args.inherit, 'elites.pkl'),
+            os.path.join(args.save_dir, args.inherit, 'popu' + args.inherit, 'scalar.pkl')
+        )
+
+
     rl_num_updates = args.warmup_iter
     for sample, scalarization in zip(elite_batch, scalarization_batch):
         sample.optgraph_id = opt_graph.insert(deepcopy(scalarization.weights), deepcopy(sample.objs), -1)
@@ -142,7 +151,7 @@ def run(args):
                         best_sample, best_value = sample, value
                 elite_batch.append(best_sample)
         elif args.selection_method == 'prediction-guided':
-            elite_batch, scalarization_batch, predicted_offspring_objs = population.prediction_uided_selection(args, iteration, ep, opt_graph, scalarization_template)
+            elite_batch, scalarization_batch, predicted_offspring_objs = population.prediction_guided_selection(args, iteration, ep, opt_graph, scalarization_template)
         elif args.selection_method == 'random':
             elite_batch, scalarization_batch = population.random_selection(args, scalarization_template)
         elif args.selection_method == 'ra':
@@ -174,20 +183,23 @@ def run(args):
         for i in range(len(elite_batch)):
             print_info('objs = {}, weight = {}'.format(elite_batch[i].objs, scalarization_batch[i].weights))
 
+
+
+
         iteration = min(iteration + rl_num_updates, total_num_updates)
 
         rl_num_updates = args.update_iter
 
         # ----------------------> Save Results <---------------------- #
         # save ep
-        ep_dir = os.path.join(args.save_dir, str(iteration), 'ep')
+        ep_dir = os.path.join(args.save_dir, args.msg, str(iteration), 'ep')
         os.makedirs(ep_dir, exist_ok = True)
         with open(os.path.join(ep_dir, 'objs.txt'), 'w') as fp:
             for obj in ep.obj_batch:
                 fp.write(('{:5f}' + (args.obj_num - 1) * ',{:5f}' + '\n').format(*obj))
 
         # save population
-        population_dir = os.path.join(args.save_dir, str(iteration), 'population')
+        population_dir = os.path.join(args.save_dir, args.msg, str(iteration), 'population')
         os.makedirs(population_dir, exist_ok = True)
         with open(os.path.join(population_dir, 'objs.txt'), 'w') as fp:
             for sample in population.sample_batch:
@@ -202,7 +214,7 @@ def run(args):
                 fp.write('{}\n'.format(sample.optgraph_id))
 
         # save elites
-        elite_dir = os.path.join(args.save_dir, str(iteration), 'elites')
+        elite_dir = os.path.join(args.save_dir, args.msg, str(iteration), 'elites')
         os.makedirs(elite_dir, exist_ok = True)
         with open(os.path.join(elite_dir, 'elites.txt'), 'w') as fp:
             for elite in elite_batch:
@@ -219,23 +231,36 @@ def run(args):
                 for j in range(len(all_offspring_batch[i])):
                     fp.write(('{:5f}' + (args.obj_num - 1) * ',{:5f}' + '\n').format(*(all_offspring_batch[i][j].objs)))
 
+
+
+
+
+    # 'while' is over
+    # ----------------------> Save elite_batch & scalarization_batch <---------------------- #
+    os.makedirs(os.path.join(args.save_dir, args.msg, 'popu' + args.msg), exist_ok = True)
+    with open(os.path.join(args.save_dir, args.msg, 'popu' + args.msg, 'elites.pkl'), 'wb') as f:
+        pickle.dump(elite_batch, f)
+    with open(os.path.join(args.save_dir, args.msg, 'popu' + args.msg, 'scalar.pkl'), 'wb') as f:
+        pickle.dump(scalarization_batch, f)
+
+
     # ----------------------> Save final_gg13d Model <---------------------- 
 
-    os.makedirs(os.path.join(args.save_dir, 'final_gg13d'), exist_ok = True)
+    os.makedirs(os.path.join(args.save_dir, args.msg, 'final' + args.msg), exist_ok = True)
 
     # save ep policies & env_params
     for i, sample in enumerate(ep.sample_batch):
-        torch.save(sample.actor_critic.state_dict(), os.path.join(args.save_dir, 'final_gg13d', 'EP_policy_{}.pt'.format(i)))
-        with open(os.path.join(args.save_dir, 'final_gg13d', 'EP_env_params_{}.pkl'.format(i)), 'wb') as fp:
+        torch.save(sample.actor_critic.state_dict(), os.path.join(args.save_dir, args.msg, 'final' + args.msg, 'EP_policy_{}.pt'.format(i)))
+        with open(os.path.join(args.save_dir, args.msg, 'final' + args.msg, 'EP_env_params_{}.pkl'.format(i)), 'wb') as fp:
             pickle.dump(sample.env_params, fp)
     
     # save all ep objectives
-    with open(os.path.join(args.save_dir, 'final_gg13d', 'objs.txt'), 'w') as fp:
+    with open(os.path.join(args.save_dir, args.msg, 'final' + args.msg, 'objs.txt'), 'w') as fp:
         for i, obj in enumerate(ep.obj_batch):
             fp.write(('{:5f}' + (args.obj_num - 1) * ',{:5f}' + '\n').format(*(obj)))
 
     # save all ep env_params
     if args.obj_rms:
-        with open(os.path.join(args.save_dir, 'final_gg13d', 'env_params.txt'), 'w') as fp:
+        with open(os.path.join(args.save_dir, args.msg, 'final' + args.msg, 'env_params.txt'), 'w') as fp:
             for sample in ep.sample_batch:
                 fp.write('obj_rms: mean: {} var: {}\n'.format(sample.env_params['obj_rms'].mean, sample.env_params['obj_rms'].var))
