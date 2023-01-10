@@ -1,0 +1,124 @@
+A
+
+Pareto size : 26, Hypervolume : 15242081, Sparsity : 54556.84
+Pareto size : 54, Hypervolume : 15999246, Sparsity : 13821.92
+Pareto size : 64, Hypervolume : 16142255, Sparsity : 82709.92
+Pareto size : 52, Hypervolume : 16463169, Sparsity : 92151.75
+Pareto size : 58, Hypervolume : 16796139, Sparsity : 39661.56
+Pareto size : 69, Hypervolume : 16894636, Sparsity : 30404.67
+Pareto size : 62, Hypervolume : 16960145, Sparsity : 26667.90
+Pareto size : 74, Hypervolume : 17009167, Sparsity : 16613.24
+Pareto size : 79, Hypervolume : 17034659, Sparsity : 14290.35
+Pareto size : 80, Hypervolume : 17088968, Sparsity : 11860.01
+Pareto size : 98, Hypervolume : 17113760, Sparsity : 8858.00
+Pareto size : 102, Hypervolume : 17144051, Sparsity : 12031.29
+Pareto size : 107, Hypervolume : 17177502, Sparsity : 9066.13
+Pareto size : 104, Hypervolume : 17191612, Sparsity : 8861.89
+Pareto size : 115, Hypervolume : 17238112, Sparsity : 7151.50
+Pareto size : 110, Hypervolume : 17297406, Sparsity : 7369.46
+Pareto size : 112, Hypervolume : 17297721, Sparsity : 7207.98
+Pareto size : 120, Hypervolume : 17308094, Sparsity : 6351.82
+Pareto size : 125, Hypervolume : 17475113, Sparsity : 6186.59
+Pareto size : 131, Hypervolume : 17500312, Sparsity : 5815.22
+Pareto size : 129, Hypervolume : 17502383, Sparsity : 5975.94
+Pareto size : 129, Hypervolume : 17502383, Sparsity : 5975.94
+
+B
+
+Pareto size : 30, Hypervolume : 15275369, Sparsity : 76967.85
+Pareto size : 46, Hypervolume : 16015117, Sparsity : 8742.58
+Pareto size : 60, Hypervolume : 16436446, Sparsity : 5933.93
+Pareto size : 50, Hypervolume : 16532320, Sparsity : 10765.83
+Pareto size : 64, Hypervolume : 16719369, Sparsity : 7082.26
+Pareto size : 69, Hypervolume : 16847670, Sparsity : 5724.31
+Pareto size : 61, Hypervolume : 16931118, Sparsity : 10641.68
+Pareto size : 56, Hypervolume : 17059764, Sparsity : 13185.23
+Pareto size : 65, Hypervolume : 17194408, Sparsity : 13848.17
+Pareto size : 66, Hypervolume : 17264882, Sparsity : 13397.24
+Pareto size : 59, Hypervolume : 17563231, Sparsity : 9496.22
+Pareto size : 62, Hypervolume : 17585013, Sparsity : 9282.92
+Pareto size : 67, Hypervolume : 17604500, Sparsity : 8090.15
+Pareto size : 70, Hypervolume : 17617361, Sparsity : 7752.12
+Pareto size : 71, Hypervolume : 17653021, Sparsity : 7901.54
+Pareto size : 67, Hypervolume : 17803039, Sparsity : 8226.50
+Pareto size : 77, Hypervolume : 17832171, Sparsity : 7119.43
+Pareto size : 72, Hypervolume : 17847387, Sparsity : 7652.59
+Pareto size : 71, Hypervolume : 17876015, Sparsity : 10232.97
+Pareto size : 76, Hypervolume : 17886034, Sparsity : 9375.38
+Pareto size : 76, Hypervolume : 17886034, Sparsity : 9375.38
+Pareto size : 76, Hypervolume : 17886034, Sparsity : 9375.38
+
+C
+Pareto size : 8, Hypervolume : 14988190, Sparsity : 1018179.99
+Pareto size : 8, Hypervolume : 15373015, Sparsity : 1745585.92
+Pareto size : 7, Hypervolume : 16415878, Sparsity : 11528.15
+Pareto size : 15, Hypervolume : 17068141, Sparsity : 5283.02
+Pareto size : 18, Hypervolume : 17562659, Sparsity : 3439.72
+Pareto size : 17, Hypervolume : 17792100, Sparsity : 5001.94
+Pareto size : 15, Hypervolume : 17813760, Sparsity : 7477.47
+Pareto size : 14, Hypervolume : 17823431, Sparsity : 8496.53
+Pareto size : 16, Hypervolume : 17840847, Sparsity : 7327.39
+Pareto size : 25, Hypervolume : 18054087, Sparsity : 3698.30
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+Pareto size : 26, Hypervolume : 18509462, Sparsity : 4084.67
+
+D
+
+Pareto size : 22, Hypervolume : 19984627, Sparsity : 51209.94
+Pareto size : 23, Hypervolume : 20598669, Sparsity : 44643.00
+Pareto size : 36, Hypervolume : 21581603, Sparsity : 29286.95
+Pareto size : 44, Hypervolume : 21974588, Sparsity : 14484.96
+Pareto size : 55, Hypervolume : 22383226, Sparsity : 10485.34
+Pareto size : 44, Hypervolume : 22571400, Sparsity : 10831.69
+Pareto size : 40, Hypervolume : 23126064, Sparsity : 7520.18
+Pareto size : 46, Hypervolume : 23241094, Sparsity : 6887.88
+Pareto size : 43, Hypervolume : 23403049, Sparsity : 8593.07
+Pareto size : 46, Hypervolume : 23534451, Sparsity : 7583.29
+Pareto size : 41, Hypervolume : 23654399, Sparsity : 9669.84
+Pareto size : 52, Hypervolume : 23673684, Sparsity : 6607.97
+Pareto size : 55, Hypervolume : 23727081, Sparsity : 6176.07
+Pareto size : 58, Hypervolume : 23742094, Sparsity : 5783.36
+Pareto size : 58, Hypervolume : 23836564, Sparsity : 5869.74
+Pareto size : 56, Hypervolume : 23846715, Sparsity : 6062.13
+Pareto size : 56, Hypervolume : 23850826, Sparsity : 6022.88
+Pareto size : 53, Hypervolume : 23900441, Sparsity : 6566.50
+Pareto size : 53, Hypervolume : 23904586, Sparsity : 6575.04
+Pareto size : 53, Hypervolume : 23911835, Sparsity : 7226.88
+Pareto size : 54, Hypervolume : 23911909, Sparsity : 7040.96
+Pareto size : 54, Hypervolume : 23911909, Sparsity : 7040.96
+
+M
+Pareto size : 20, Hypervolume : 18036099, Sparsity : 86220.30
+Pareto size : 39, Hypervolume : 18949014, Sparsity : 29097.27
+Pareto size : 33, Hypervolume : 19249571, Sparsity : 25641.96
+Pareto size : 39, Hypervolume : 19408917, Sparsity : 24466.45
+Pareto size : 48, Hypervolume : 19664615, Sparsity : 15087.91
+Pareto size : 56, Hypervolume : 19876329, Sparsity : 12496.63
+Pareto size : 61, Hypervolume : 19966829, Sparsity : 10795.45
+Pareto size : 68, Hypervolume : 19990451, Sparsity : 9766.81
+Pareto size : 65, Hypervolume : 20091516, Sparsity : 9406.55
+Pareto size : 64, Hypervolume : 20103939, Sparsity : 9698.42
+Pareto size : 61, Hypervolume : 20273520, Sparsity : 12498.13
+Pareto size : 59, Hypervolume : 20277606, Sparsity : 12992.56
+Pareto size : 65, Hypervolume : 20332544, Sparsity : 12793.78
+Pareto size : 74, Hypervolume : 20424508, Sparsity : 11767.58
+Pareto size : 77, Hypervolume : 20452276, Sparsity : 10569.55
+Pareto size : 77, Hypervolume : 20470238, Sparsity : 11118.84
+Pareto size : 76, Hypervolume : 20471971, Sparsity : 11283.32
+Pareto size : 76, Hypervolume : 20472794, Sparsity : 11316.06
+Pareto size : 76, Hypervolume : 20472794, Sparsity : 11316.06
+Pareto size : 76, Hypervolume : 20472794, Sparsity : 11316.06
+Pareto size : 76, Hypervolume : 20472794, Sparsity : 11316.06
+Pareto size : 76, Hypervolume : 20472794, Sparsity : 11316.06
+
+
